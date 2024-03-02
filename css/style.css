@@ -1,0 +1,36 @@
+body {
+  background: #385757;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.links {
+  margin: 2rem;
+  padding: 8px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #41846dc7;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: 1s;
+}
+
+img:hover {
+  filter: saturate(2.2);
+}
+
+.name {
+  color: white;
+  list-style: none;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bolder;
+}
