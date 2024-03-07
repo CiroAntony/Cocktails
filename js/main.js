@@ -1,39 +1,30 @@
-const apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
+const urlApi = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a"
+fetch(urlApi)
+.then((response) => {
+    if(!response.ok) {
+        throw new Error(`HTTP error status: ${response.status}`)
+    }
+    return response.json()
+})
+.then((data)=> {
+    console.log(data)
 
-const drinks = () => {
-  fetch(apiUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("La url no responde");
-      }
-      return response.json();
+    const drinksToShow = data.drinks.slice(0,10)
+
+    drinksToShow.forEach((drink) => {
+        const ctndrinks = document.querySelector(".drinks-top");
+        const  cardDrinks = document.createElement('div');
+        cardDrinks.classList.add("card")
+
+        const  imgDrg = document.createElement('img')
+        imgDrg.src = drink.strDrinkThumb;
+        
+        const title = document.createElement('p');
+        title.textContent = drink.strDrink;
+
+        cardDrinks.appendChild(imgDrg)
+        cardDrinks.appendChild(title)
+        ctndrinks.appendChild(cardDrinks);
     })
-    .then((data) => {
-      console.log(data);
-
-      data.drinks.forEach((drink) => {
-        const container = document.querySelector(".container");
-        const cocktails = document.createElement("div");
-        cocktails.classList.add("drinks-container");
-        const ctnImage = document.createElement("img");
-        ctnImage.src = drink.strDrinkThumb;
-        cocktails.appendChild(ctnImage);
-
-        const link = document.createElement("a");
-        link.classList.add("links");
-        link.href = `cocteles.html?id=${drink.idDrink}`;
-
-        const ctnName = document.createElement("li");
-        ctnName.classList.add("name");
-        ctnName.textContent = drink.strDrink;
-        cocktails.appendChild(ctnName);
-        container.appendChild(link);
-        link.appendChild(cocktails);
-      });
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-};
-
-drinks();
+})
+.catch((error) => console.log('Error: ' + error));
