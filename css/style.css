@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-family: "Roboto Mono", monospace;
+  background-color: #c9e2a733;
 }
 
 /* index.html */
@@ -21,7 +22,7 @@ body {
 }
 
 .link-header:hover {
-  color: rgb(22, 170, 196);
+  color: #a1902b7a;
 }
 
 .link-header:before {
@@ -31,7 +32,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: rgb(29, 184, 231);
+  background-color: #a1902b7a;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -46,8 +47,7 @@ body {
 }
 
 .banner-img {
-  width: 1920px;
-  height:  720px;
+  width: 100%;
   position: relative;
 }
 
@@ -71,13 +71,41 @@ body {
   font-weight: 500;
 }
 
+.subTitle-top {
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 8px;
+}
+
+.top-img {
+  width: 200px;
+  height: 200px;
+  transition: 1s;
+}
+
+.top-img:hover {
+  filter: saturate(2.2)
+}
+
+footer{
+  text-align: center;
+}
+
 
 /* cocktails.html */
 .container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background: #385757;
+  background-color: #c9e2a733;
 }
 
 .links {
@@ -87,12 +115,12 @@ body {
   padding: 8px;
   text-align: center;
   border-radius: 12px;
-  background-color: #41846dc7;
+  background-color: #a1902b7a;
 }
 
 .img-list {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   border-radius: 12px;
   margin-bottom: 12px;
   transition: 1s;
@@ -105,7 +133,6 @@ body {
 .name {
   color: white;
   list-style: none;
-  font-family: Roboto;
   font-size: 16px;
   font-weight: bolder;
 }
