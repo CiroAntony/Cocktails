@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: "Roboto Mono", monospace;
-  background-color: #c9e2a733;
+  background-color: #76cb7529;
 }
 
 /* index.html */
@@ -95,17 +95,63 @@ body {
   filter: saturate(2.2)
 }
 
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.cocktail-card {
+  flex: 1 0 300px;
+  margin: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.cocktail-card:hover {
+  transform: translateY(-5px);
+}
+
+.cocktail-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.cocktail-info {
+  padding: 15px;
+}
+
+.cocktail-name {
+  margin: 0;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.cocktail-description {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+}
+
 footer{
   text-align: center;
 }
 
 
 /* cocktails.html */
+.main-list {
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #c9e2a733;
+  max-width: 80%;
 }
 
 .links {
@@ -116,6 +162,11 @@ footer{
   text-align: center;
   border-radius: 12px;
   background-color: #a1902b7a;
+  transition:transform 0.7s;
+}
+
+.links:hover {
+  transform: translateY(-8px);
 }
 
 .img-list {
@@ -135,4 +186,22 @@ footer{
   list-style: none;
   font-size: 16px;
   font-weight: bolder;
+}
+
+/* info-cocktails.html */
+.container-info{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.cocktail-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-cocktail {
+  width: 500px;
+  height: 500px;
 }

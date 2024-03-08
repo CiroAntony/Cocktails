@@ -1,8 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const cocktailId = urlParams.get("id");
 
-const apiUrl =
-  `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`;
+const apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`;
 
 fetch(apiUrl)
   .then((response) => {
@@ -14,7 +13,7 @@ fetch(apiUrl)
   .then((data) => {
     console.log(data);
 
-    const container = document.querySelector(".container");
+    const container = document.querySelector(".container-info");
     const cocktailDetails = document.createElement("div");
     cocktailDetails.classList.add("cocktail-details");
 

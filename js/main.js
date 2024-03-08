@@ -9,7 +9,7 @@ fetch(urlApi)
 .then((data)=> {
     console.log(data)
 
-    const drinksToShow = data.drinks.slice(0,10)
+    const drinksToShow = data.drinks.slice(10,20)
 
     drinksToShow.forEach((drink) => {
         const ctndrinks = document.querySelector(".cards-container");
