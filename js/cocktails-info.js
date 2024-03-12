@@ -17,6 +17,9 @@ fetch(apiUrl)
     const cocktailDetails = document.createElement("div");
     cocktailDetails.classList.add("cocktail-details");
 
+    const ctnInfo = document.createElement("div");
+    ctnInfo.classList.add("ctn-info");
+
     const ctnImage = document.createElement("img");
     ctnImage.classList.add("image-cocktail");
     ctnImage.src = data.drinks[0].strDrinkThumb;
@@ -24,9 +27,11 @@ fetch(apiUrl)
 
     const name = document.createElement("h2");
     name.textContent = data.drinks[0].strDrink;
+    name.classList.add("cocktail-name"); // Added class
     cocktailDetails.appendChild(name);
 
     const ingredientsList = document.createElement("ul");
+    ingredientsList.classList.add("ingredients-list"); // Added class
     const ingredients = [
       data.drinks[0].strIngredient1,
       data.drinks[0].strIngredient2,
@@ -40,14 +45,23 @@ fetch(apiUrl)
       if (ingredient) {
         const li = document.createElement("li");
         li.textContent = ingredient;
+        li.classList.add("ingredient-item"); // Added class
         return li.outerHTML;
       } else {
         return "";
       }
     });
 
+    ctnInfo.appendChild(name)
+    ctnInfo.appendChild(ingredientsList)
+
+    const instructions = document.createElement("p");
+    instructions.classList.add("instructions");
+    instructions.textContent = data.drinks[0].strInstructionsIT;
+    ctnInfo.appendChild(instructions)
+
     ingredientsList.innerHTML = ingredientItems.join("");
-    cocktailDetails.appendChild(ingredientsList);
+    cocktailDetails.appendChild(ctnInfo);
 
     container.appendChild(cocktailDetails);
   })
