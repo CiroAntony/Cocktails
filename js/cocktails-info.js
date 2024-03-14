@@ -13,7 +13,7 @@ fetch(apiUrl)
   .then((data) => {
     console.log(data);
 
-    const container = document.querySelector(".container-info");
+    const container = document.querySelector(".cocktails-info");
     const cocktailDetails = document.createElement("div");
     cocktailDetails.classList.add("cocktail-details");
 
